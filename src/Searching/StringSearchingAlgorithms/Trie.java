@@ -2,7 +2,7 @@ package Searching.StringSearchingAlgorithms;
 
 class Trie {
 
-    private final TrieNode root;
+    public final TrieNode root;
 
     public Trie() {
         root = new TrieNode();

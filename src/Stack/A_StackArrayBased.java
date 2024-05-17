@@ -1,14 +1,14 @@
 package Stack;
 
-public class StackArrayBased {
-    private int maxSize;
+public class A_StackArrayBased {
+    private final int maxSize;
     private int top;
-    private int[] stackArray;
+    private final int[] stackArray;
 
-    public StackArrayBased(int size) {
+    public A_StackArrayBased(int size) {
+        top = -1;
         maxSize = size;
         stackArray = new int[maxSize];
-        top = -1;
     }
 
     public void push(int value) {
@@ -79,39 +79,39 @@ public class StackArrayBased {
 
     public static void main(String[] args) {
         // Create a new Stack with a size of 5
-        StackArrayBased stackArrayBased = new StackArrayBased(5);
+        A_StackArrayBased AStackArrayBased = new A_StackArrayBased(5);
 
         // Check if the stack is empty
-        System.out.println("Is stack empty? " + stackArrayBased.isEmpty()); // Should print: true
+        System.out.println("Is stack empty? " + AStackArrayBased.isEmpty()); // Should print: true
 
         // Push elements onto the stack
-        stackArrayBased.push(1);
-        stackArrayBased.push(2);
-        stackArrayBased.push(3);
-        stackArrayBased.push(4);
-        stackArrayBased.push(5);
+        AStackArrayBased.push(1);
+        AStackArrayBased.push(2);
+        AStackArrayBased.push(3);
+        AStackArrayBased.push(4);
+        AStackArrayBased.push(5);
 
         // Print the stack
-        stackArrayBased.print(); // Should print: 1 2 3 4 5
+        AStackArrayBased.print(); // Should print: 1 2 3 4 5
 
         // Check if the stack is full
-        System.out.println("Is stack full? " + stackArrayBased.isStackFull()); // Should print: true
+        System.out.println("Is stack full? " + AStackArrayBased.isStackFull()); // Should print: true
 
         // Get the top element of the stack
-        System.out.println("Top element: " + stackArrayBased.top()); // Should print: 5
+        System.out.println("Top element: " + AStackArrayBased.top()); // Should print: 5
 
         // Get the size of the stack
-        System.out.println("Stack size: " + stackArrayBased.size()); // Should print: 5
+        System.out.println("Stack size: " + AStackArrayBased.size()); // Should print: 5
 
         // Get the maximum and minimum elements in the stack
-        System.out.println("Max element: " + stackArrayBased.max()); // Should print: 5
-        System.out.println("Min element: " + stackArrayBased.min()); // Should print: 1
+        System.out.println("Max element: " + AStackArrayBased.max()); // Should print: 5
+        System.out.println("Min element: " + AStackArrayBased.min()); // Should print: 1
 
         // Pop elements from the stack
-        System.out.println("Popped element: " + stackArrayBased.pop()); // Should print: 5
-        System.out.println("Popped element: " + stackArrayBased.pop()); // Should print: 4
+        System.out.println("Popped element: " + AStackArrayBased.pop()); // Should print: 5
+        System.out.println("Popped element: " + AStackArrayBased.pop()); // Should print: 4
 
         // Print the stack
-        stackArrayBased.print(); // Should print: 1 2 3
+        AStackArrayBased.print(); // Should print: 1 2 3
     }
 }

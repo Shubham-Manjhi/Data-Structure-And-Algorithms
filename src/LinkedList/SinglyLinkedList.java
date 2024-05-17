@@ -1,7 +1,7 @@
 package LinkedList;
 
 public class SinglyLinkedList {
-    private Node head;
+    public Node head;
 
     public void add(int data) {
         Node newNode = new Node(data);
