@@ -1,8 +1,8 @@
-package Tree;
+package Tree.BST;
 
-import java.util.ArrayList;
+import Tree.Node;
+
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 class BinarySearchTree {

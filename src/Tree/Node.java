@@ -1,8 +1,8 @@
 package Tree;
 
-class Node {
-    int data;
-    Node left, right;
+public class Node {
+    public int data;
+    public Node left, right;
 
     public Node(int item) {
         data = item;
