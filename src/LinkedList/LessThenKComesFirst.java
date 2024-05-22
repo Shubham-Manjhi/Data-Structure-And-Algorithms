@@ -2,20 +2,20 @@ package LinkedList;
 
 public class LessThenKComesFirst {
 
-    public static Node partition(Node node, int k) {
-        Node head = node;
-        Node tail = node;
+    public static ListNode partition(ListNode listNode, int k) {
+        ListNode head = listNode;
+        ListNode tail = listNode;
 
-        while (node != null) {
-            Node next = node.next;
-            if (node.data <= k) {
-                node.next = head;
-                head = node;
+        while (listNode != null) {
+            ListNode next = listNode.next;
+            if (listNode.data <= k) {
+                listNode.next = head;
+                head = listNode;
             } else {
-                tail.next = node;
-                tail = node;
+                tail.next = listNode;
+                tail = listNode;
             }
-            node = next;
+            listNode = next;
         }
         tail.next = null;
 
@@ -23,15 +23,15 @@ public class LessThenKComesFirst {
     }
 
     public static void main(String[] args) {
-        Node head = new Node(3);
-        head.next = new Node(5);
-        head.next.next = new Node(8);
-        head.next.next.next = new Node(5);
-        head.next.next.next.next = new Node(10);
-        head.next.next.next.next.next = new Node(2);
-        head.next.next.next.next.next.next = new Node(1);
+        ListNode head = new ListNode(3);
+        head.next = new ListNode(5);
+        head.next.next = new ListNode(8);
+        head.next.next.next = new ListNode(5);
+        head.next.next.next.next = new ListNode(10);
+        head.next.next.next.next.next = new ListNode(2);
+        head.next.next.next.next.next.next = new ListNode(1);
 
-        Node result = partition(head, 5);
+        ListNode result = partition(head, 5);
         while (result != null) {
             System.out.print(result.data + " ");
             result = result.next;

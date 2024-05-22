@@ -4,10 +4,10 @@ import java.util.HashSet;
 
 public class RemoveDuplicates {
 
-    static void removeDuplicates(Node head) {
+    static void removeDuplicates(ListNode head) {
         HashSet<Integer> hs = new HashSet<>();
-        Node current = head;
-        Node prev = null;
+        ListNode current = head;
+        ListNode prev = null;
         while (current != null) {
             int curval = current.data;
             if (hs.contains(curval)) {
@@ -22,13 +22,13 @@ public class RemoveDuplicates {
 
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();
-        list.head = new Node(10);
-        list.head.next = new Node(12);
-        list.head.next.next = new Node(11);
-        list.head.next.next.next = new Node(11);
-        list.head.next.next.next.next = new Node(12);
-        list.head.next.next.next.next.next = new Node(11);
-        list.head.next.next.next.next.next.next = new Node(10);
+        list.head = new ListNode(10);
+        list.head.next = new ListNode(12);
+        list.head.next.next = new ListNode(11);
+        list.head.next.next.next = new ListNode(11);
+        list.head.next.next.next.next = new ListNode(12);
+        list.head.next.next.next.next.next = new ListNode(11);
+        list.head.next.next.next.next.next.next = new ListNode(10);
 
         System.out.println("Linked List before removing duplicates :");
         list.display();

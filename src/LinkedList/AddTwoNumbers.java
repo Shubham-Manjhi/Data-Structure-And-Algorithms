@@ -2,17 +2,17 @@ package LinkedList;
 
 public class AddTwoNumbers {
 
-    static Node addTwoLists(Node first, Node second) {
-        Node res = null;
-        Node prev = null;
-        Node temp = null;
+    static ListNode addTwoLists(ListNode first, ListNode second) {
+        ListNode res = null;
+        ListNode prev = null;
+        ListNode temp = null;
         int carry = 0, sum;
 
         while (first != null || second != null) {
             sum = carry + (first != null ? first.data : 0) + (second != null ? second.data : 0);
             carry = (sum >= 10) ? 1 : 0;
             sum = sum % 10;
-            temp = new Node(sum);
+            temp = new ListNode(sum);
 
             if (res == null) {
                 res = temp;
@@ -31,22 +31,22 @@ public class AddTwoNumbers {
         }
 
         if (carry > 0) {
-            temp.next = new Node(carry);
+            temp.next = new ListNode(carry);
         }
 
         return res;
     }
 
     public static void main(String[] args) {
-        Node first = new Node(2);
-        first.next = new Node(4);
-        first.next.next = new Node(3);
+        ListNode first = new ListNode(2);
+        first.next = new ListNode(4);
+        first.next.next = new ListNode(3);
 
-        Node second = new Node(5);
-        second.next = new Node(6);
-        second.next.next = new Node(4);
+        ListNode second = new ListNode(5);
+        second.next = new ListNode(6);
+        second.next.next = new ListNode(4);
 
-        Node res = addTwoLists(first, second);
+        ListNode res = addTwoLists(first, second);
         while (res != null) {
             System.out.print(res.data + " ");
             res = res.next;

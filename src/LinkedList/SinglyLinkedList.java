@@ -1,18 +1,18 @@
 package LinkedList;
 
 public class SinglyLinkedList {
-    public Node head;
+    public ListNode head;
 
     public void add(int data) {
-        Node newNode = new Node(data);
+        ListNode newListNode = new ListNode(data);
         if (head == null) {
-            head = newNode;
+            head = newListNode;
         } else {
-            Node current = head;
+            ListNode current = head;
             while (current.next != null) {
                 current = current.next;
             }
-            current.next = newNode;
+            current.next = newListNode;
         }
     }
 
@@ -24,7 +24,7 @@ public class SinglyLinkedList {
             head = head.next;
             return;
         }
-        Node current = head;
+        ListNode current = head;
         while (current.next != null) {
             if (current.next.data == data) {
                 current.next = current.next.next;
@@ -35,7 +35,7 @@ public class SinglyLinkedList {
     }
 
     public void display() {
-        Node current = head;
+        ListNode current = head;
         while (current != null) {
             System.out.print(current.data + " ");
             current = current.next;

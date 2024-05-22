@@ -1,13 +1,13 @@
 package Recursion;
 
-import LinkedList.Node;
+import LinkedList.ListNode;
 import LinkedList.SinglyLinkedList;
 
 public class MergedTwoSortedLinkedLists {
 
-    public static Node sortedMerge(Node list1, Node list2) {
-        Node dummyNode = new Node(0);
-        Node tail = dummyNode;
+    public static ListNode sortedMerge(ListNode list1, ListNode list2) {
+        ListNode dummyListNode = new ListNode(0);
+        ListNode tail = dummyListNode;
         while (true) {
             if (list1 == null) {
                 tail.next = list2;
@@ -26,10 +26,10 @@ public class MergedTwoSortedLinkedLists {
             }
             tail = tail.next;
         }
-        return dummyNode.next;
+        return dummyListNode.next;
     }
 
-    public Node sortedMergeRecursive(Node list1, Node list2) {
+    public ListNode sortedMergeRecursive(ListNode list1, ListNode list2) {
         if (list1 == null) {
             return list2;
         }
@@ -47,14 +47,14 @@ public class MergedTwoSortedLinkedLists {
 
     public static void main(String[] args) {
         SinglyLinkedList list1 = new SinglyLinkedList();
-        list1.head = new Node(1);
-        list1.head.next = new Node(3);
-        list1.head.next.next = new Node(5);
+        list1.head = new ListNode(1);
+        list1.head.next = new ListNode(3);
+        list1.head.next.next = new ListNode(5);
 
         SinglyLinkedList list2 = new SinglyLinkedList();
-        list2.head = new Node(2);
-        list2.head.next = new Node(4);
-        list2.head.next.next = new Node(6);
+        list2.head = new ListNode(2);
+        list2.head.next = new ListNode(4);
+        list2.head.next.next = new ListNode(6);
 
         SinglyLinkedList result = new SinglyLinkedList();
         result.head = sortedMerge(list1.head, list2.head);

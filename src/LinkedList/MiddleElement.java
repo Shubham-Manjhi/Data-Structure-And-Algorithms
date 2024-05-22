@@ -2,9 +2,9 @@ package LinkedList;
 
 public class MiddleElement {
 
-    static void printMiddle(Node head) {
-        Node slow_ptr = head;
-        Node fast_ptr = head;
+    static void printMiddle(ListNode head) {
+        ListNode slow_ptr = head;
+        ListNode fast_ptr = head;
         if (head != null) {
             while (fast_ptr != null && fast_ptr.next != null) {
                 fast_ptr = fast_ptr.next.next;

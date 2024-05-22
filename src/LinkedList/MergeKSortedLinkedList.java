@@ -5,12 +5,12 @@ import java.util.PriorityQueue;
 
 public class MergeKSortedLinkedList {
 
-    public static Node mergeKLists(Node[] lists) {
+    public static ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
 
-        PriorityQueue<Node> queue = new PriorityQueue<Node>(lists.length, new Comparator<Node>() {
+        PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>() {
             @Override
-            public int compare(Node o1, Node o2) {
+            public int compare(ListNode o1, ListNode o2) {
                 if (o1.data < o2.data)
                     return -1;
                 else if (o1.data == o2.data)
@@ -20,12 +20,12 @@ public class MergeKSortedLinkedList {
             }
         });
 
-        Node dummy = new Node(0);
-        Node tail = dummy;
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
 
-        for (Node node : lists)
-            if (node != null)
-                queue.add(node);
+        for (ListNode listNode : lists)
+            if (listNode != null)
+                queue.add(listNode);
 
         while (!queue.isEmpty()) {
             tail.next = queue.poll();
@@ -38,21 +38,21 @@ public class MergeKSortedLinkedList {
     }
 
     public static void main(String[] args) {
-        Node list1 = new Node(1);
-        list1.next = new Node(4);
-        list1.next.next = new Node(7);
+        ListNode list1 = new ListNode(1);
+        list1.next = new ListNode(4);
+        list1.next.next = new ListNode(7);
 
-        Node list2 = new Node(2);
-        list2.next = new Node(5);
-        list2.next.next = new Node(8);
+        ListNode list2 = new ListNode(2);
+        list2.next = new ListNode(5);
+        list2.next.next = new ListNode(8);
 
-        Node list3 = new Node(3);
-        list3.next = new Node(6);
-        list3.next.next = new Node(9);
+        ListNode list3 = new ListNode(3);
+        list3.next = new ListNode(6);
+        list3.next.next = new ListNode(9);
 
-        Node[] lists = {list1, list2, list3};
+        ListNode[] lists = {list1, list2, list3};
 
-        Node result = mergeKLists(lists);
+        ListNode result = mergeKLists(lists);
         while (result != null) {
             System.out.print(result.data + " ");
             result = result.next;

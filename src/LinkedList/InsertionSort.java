@@ -2,19 +2,19 @@ package LinkedList;
 
 public class InsertionSort {
 
-    static Node sorted;
+    static ListNode sorted;
 
-    static void sortedInsert(Node newNode) {
-        if (sorted == null || sorted.data >= newNode.data) {
-            newNode.next = sorted;
-            sorted = newNode;
+    static void sortedInsert(ListNode newListNode) {
+        if (sorted == null || sorted.data >= newListNode.data) {
+            newListNode.next = sorted;
+            sorted = newListNode;
         } else {
-            Node current = sorted;
-            while (current.next != null && current.next.data < newNode.data) {
+            ListNode current = sorted;
+            while (current.next != null && current.next.data < newListNode.data) {
                 current = current.next;
             }
-            newNode.next = current.next;
-            current.next = newNode;
+            newListNode.next = current.next;
+            current.next = newListNode;
         }
     }
 

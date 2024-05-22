@@ -2,9 +2,9 @@ package LinkedList;
 
 public class FindLengthOfLoop {
 
-    private static int findIfLoopExistsUsingFloyds(Node head) {
-        Node fastPtr = head;
-        Node slowPtr = head;
+    private static int findIfLoopExistsUsingFloyds(ListNode head) {
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
 
         boolean loopExist = false;
         while (fastPtr != null && fastPtr.next != null) {

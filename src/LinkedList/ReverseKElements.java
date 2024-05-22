@@ -2,14 +2,14 @@ package LinkedList;
 
 public class ReverseKElements {
 
-    public static Node reverseKGroup(Node head, int k) {
-        Node current = head;
-        Node next = null;
-        Node prev = null;
+    public static ListNode reverseKGroup(ListNode head, int k) {
+        ListNode current = head;
+        ListNode next = null;
+        ListNode prev = null;
         int count = 0;
 
         // Check for k nodes
-        Node check = head;
+        ListNode check = head;
         int checkCount = 0;
         while (check != null && checkCount < k) {
             check = check.next;
@@ -37,14 +37,14 @@ public class ReverseKElements {
     }
 
     public static void main(String[] args) {
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
-        head.next.next.next.next.next = new Node(6);
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+        head.next.next.next.next.next = new ListNode(6);
 
-        Node reversedList = reverseKGroup(head, 2);
+        ListNode reversedList = reverseKGroup(head, 2);
         while (reversedList != null) {
             System.out.print(reversedList.data + " ");
             reversedList = reversedList.next;

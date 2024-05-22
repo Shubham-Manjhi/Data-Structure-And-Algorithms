@@ -2,8 +2,8 @@ package LinkedList;
 
 public class IntersectingNode {
 
-    static int getNodeCount(Node node) {
-        Node current = node;
+    static int getNodeCount(ListNode listNode) {
+        ListNode current = listNode;
         int count = 0;
 
         while (current != null) {
@@ -14,9 +14,9 @@ public class IntersectingNode {
         return count;
     }
 
-    static Node getIntersectionNode(int d, Node node1, Node node2) {
-        Node current1 = node1;
-        Node current2 = node2;
+    static ListNode getIntersectionNode(int d, ListNode listNode1, ListNode listNode2) {
+        ListNode current1 = listNode1;
+        ListNode current2 = listNode2;
 
         for (int i = 0; i < d; i++) {
             if (current1 == null) {
@@ -36,7 +36,7 @@ public class IntersectingNode {
         return null;
     }
 
-    static Node findIntersection(Node head1, Node head2) {
+    static ListNode findIntersection(ListNode head1, ListNode head2) {
         int c1 = getNodeCount(head1);
         int c2 = getNodeCount(head2);
         int d;
@@ -54,20 +54,20 @@ public class IntersectingNode {
         SinglyLinkedList list = new SinglyLinkedList();
 
         // creating first linked list
-        list.head = new Node(3);
-        list.head.next = new Node(6);
-        list.head.next.next = new Node(9);
-        list.head.next.next.next = new Node(15);
-        list.head.next.next.next.next = new Node(30);
+        list.head = new ListNode(3);
+        list.head.next = new ListNode(6);
+        list.head.next.next = new ListNode(9);
+        list.head.next.next.next = new ListNode(15);
+        list.head.next.next.next.next = new ListNode(30);
 
         // creating second linked list
-        Node head2 = new Node(10);
-        head2.next = new Node(15);
-        head2.next.next = new Node(30);
+        ListNode head2 = new ListNode(10);
+        head2.next = new ListNode(15);
+        head2.next.next = new ListNode(30);
 
-        Node intersectingNode = IntersectingNode.findIntersection(list.head, head2);
+        ListNode intersectingListNode = IntersectingNode.findIntersection(list.head, head2);
 
-        System.out.println("The node of intersection is " + intersectingNode.data);
+        System.out.println("The node of intersection is " + intersectingListNode.data);
     }
 
 }
