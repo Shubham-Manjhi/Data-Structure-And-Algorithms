@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 public class MergeKSortedLinkedList {
 
-    public static ListNode mergeKLists(ListNode[] lists) {
+    public static ListNode mergeKListsWithPriorityQueue(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
 
         PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(lists.length, new Comparator<ListNode>() {
@@ -37,6 +37,38 @@ public class MergeKSortedLinkedList {
         return dummy.next;
     }
 
+    public static ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) return null;
+        if (lists.length == 1) return lists[0];
+
+        return mergeLists(lists, 0, lists.length - 1);
+
+    }
+
+    public static ListNode mergeLists(ListNode[] lists, int start, int end) {
+        if (start == end) return lists[start];
+        int mid = start + (end - start) / 2;
+        ListNode left = mergeLists(lists, start, mid);
+        ListNode right = mergeLists(lists, mid + 1, end);
+
+        ListNode ans = new ListNode(0);
+        ListNode ret = ans;
+        while (left != null && right != null) {
+            if (left.data < right.data) {
+                ans.next = left;
+                left = left.next;
+            } else {
+                ans.next = right;
+                right = right.next;
+            }
+            ans = ans.next;
+        }
+        if (left != null) ans.next = left;
+        if (right != null) ans.next = right;
+
+        return ret.next;
+    }
+
     public static void main(String[] args) {
         ListNode list1 = new ListNode(1);
         list1.next = new ListNode(4);
@@ -52,7 +84,15 @@ public class MergeKSortedLinkedList {
 
         ListNode[] lists = {list1, list2, list3};
 
-        ListNode result = mergeKLists(lists);
+
+        ListNode result = mergeKListsWithPriorityQueue(lists);
+        while (result != null) {
+            System.out.print(result.data + " ");
+            result = result.next;
+        }
+
+        lists = new ListNode[]{list1, list2, list3};
+        result = mergeKLists(lists);
         while (result != null) {
             System.out.print(result.data + " ");
             result = result.next;
