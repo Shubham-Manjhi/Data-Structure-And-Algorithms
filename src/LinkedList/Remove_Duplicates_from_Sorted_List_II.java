@@ -75,7 +75,6 @@ public class Remove_Duplicates_from_Sorted_List_II {
 // Example to test the deleteDuplicates method
 class DeleteDuplicatesListNodeMain {
     public static void main(String[] args) {
-        Solution solution = new Solution();
 
         // Construct the linked list: 1 -> 2 -> 3 -> 3 -> 4 -> 4 -> 5
         DeleteDuplicatesListNode head = new DeleteDuplicatesListNode(1);
