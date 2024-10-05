@@ -29,17 +29,17 @@ package LinkedList;
  * Space Complexity: O(1), as we only use pointers for manipulation.
  */
 
-class ListNode {
+class LinkedListCycleNode {
     int val;
-    ListNode next;
-    ListNode(int val) { this.val = val; }
+    LinkedListCycleNode next;
+    LinkedListCycleNode(int val) { this.val = val; }
 }
 
-public class Solution {
-    public boolean hasCycle(ListNode head) {
+class LinkedListCycleChecker {
+    public boolean hasCycle(LinkedListCycleNode head) {
         // Initialize two pointers
-        ListNode slow = head;
-        ListNode fast = head;
+        LinkedListCycleNode slow = head;
+        LinkedListCycleNode fast = head;
 
         while (fast != null && fast.next != null) {
             slow = slow.next;          // Move slow pointer one step
@@ -56,15 +56,15 @@ public class Solution {
 }
 
 // Example to test the hasCycle method
-public class Main {
+class LinkedListCycleCheckerMain {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        LinkedListCycleChecker checker = new LinkedListCycleChecker();
 
         // Construct a cycle linked list: 3 -> 2 -> 0 -> -4 -> 2 (cycle back to 2)
-        ListNode head = new ListNode(3);
-        ListNode node2 = new ListNode(2);
-        ListNode node0 = new ListNode(0);
-        ListNode nodeNeg4 = new ListNode(-4);
+        LinkedListCycleNode head = new LinkedListCycleNode(3);
+        LinkedListCycleNode node2 = new LinkedListCycleNode(2);
+        LinkedListCycleNode node0 = new LinkedListCycleNode(0);
+        LinkedListCycleNode nodeNeg4 = new LinkedListCycleNode(-4);
 
         head.next = node2;
         node2.next = node0;
@@ -72,7 +72,7 @@ public class Main {
         nodeNeg4.next = node2; // Creates a cycle
 
         // Check for cycle
-        boolean result = solution.hasCycle(head);
+        boolean result = checker.hasCycle(head);
         System.out.println("Has Cycle: " + result);
     }
 }
